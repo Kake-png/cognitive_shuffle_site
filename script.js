@@ -6,17 +6,20 @@ const wordDisplay =
 
 let timerId = null;
 let isPlaying = false;
-let currentAudio = null;
 
 let shuffledWords = [];
 let currentIndex = 0;
 
 
-// 単語リストをシャッフル
+// Audioは1個だけ作る
+const audio = new Audio();
+audio.preload = "auto";
+
+
+// 単語をシャッフル
 function shuffleWords() {
   shuffledWords = [...words];
 
-  // Fisher-Yates shuffle
   for (let i = shuffledWords.length - 1; i > 0; i--) {
     const j =
       Math.floor(Math.random() * (i + 1));
@@ -32,7 +35,6 @@ function shuffleWords() {
 // 次の単語を再生
 function playNextWord() {
 
-  // 全部使い切ったら、もう一度シャッフル
   if (currentIndex >= shuffledWords.length) {
     shuffleWords();
   }
@@ -41,32 +43,31 @@ function playNextWord() {
 
   currentIndex++;
 
-
   wordDisplay.textContent = item.word;
 
 
-  // 前の音声が残っていたら停止
-  if (currentAudio !== null) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
+  // 同じAudio要素の中身だけ入れ替える
+  audio.pause();
 
+  audio.src = `audio/${item.file}`;
 
-  currentAudio =
-    new Audio(`audio/${item.file}`);
+  audio.currentTime = 0;
 
-  currentAudio.play();
+  audio.play().catch(error => {
+    console.error("音声再生エラー:", error);
+  });
 }
 
 
-// 再生開始
+// 開始
 function start() {
 
-  // 初回だけシャッフル
   if (shuffledWords.length === 0) {
     shuffleWords();
   }
 
+  // これはボタンを押した直後なので
+  // スマホでも再生許可を取りやすい
   playNextWord();
 
   timerId =
@@ -85,14 +86,8 @@ function stop() {
 
   timerId = null;
 
-
-  // 現在流れている音声も停止
-  if (currentAudio !== null) {
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-    currentAudio = null;
-  }
-
+  audio.pause();
+  audio.currentTime = 0;
 
   isPlaying = false;
 
@@ -100,7 +95,6 @@ function stop() {
 }
 
 
-// ボタン操作
 startButton.addEventListener("click", () => {
 
   if (isPlaying) {
