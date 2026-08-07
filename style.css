@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  padding: 100px 24px 40px;
+  padding: 120px 24px 40px;
   min-height: 100vh;
 
   background: white;
@@ -14,22 +14,26 @@ body {
 
   display: flex;
   flex-direction: column;
-
-  /* 縦中央をやめる */
-  justify-content: flex-start;
-
-  /* ページ全体の箱は左右中央 */
   align-items: center;
 
-  /* 中の文章も中央揃え */
   text-align: center;
 }
+
+
+/* -------------------------
+   メイン部分
+------------------------- */
 
 main {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 }
+
+
+/* -------------------------
+   再生部分
+------------------------- */
 
 .player {
   text-align: center;
@@ -38,34 +42,39 @@ main {
 h1 {
   width: 100%;
   margin: 0 auto;
+
   text-align: center;
 }
 
 #start-button {
-  margin-top: 100px;
-}
-
-button {
   width: 100%;
   max-width: 200px;
+
+  margin-top: 24px;
   padding: 16px;
 
   font-size: 1rem;
+
+  cursor: pointer;
 }
 
-/* はじめるボタンと説明文の間 */
+
+/* -------------------------
+   説明部分
+------------------------- */
+
 .description {
-  margin-top: 300px;
+  margin-top: 100px;
+
   text-align: center;
 }
 
-/* 説明文の行間 */
 .description p {
-  line-height: 3;
   margin: 0;
+
+  line-height: 2;
 }
 
-/* 見出しの上下には少し余白 */
 .description h3 {
   margin-top: 48px;
   margin-bottom: 24px;
@@ -75,6 +84,11 @@ button {
   margin-top: 0;
 }
 
+
+/* -------------------------
+   フッター
+------------------------- */
+
 footer {
   width: 100%;
   max-width: 600px;
@@ -82,11 +96,19 @@ footer {
   margin-top: 64px;
 
   text-align: center;
+
   font-size: 0.8rem;
+
   opacity: 0.6;
 }
 
+
+/* -------------------------
+   OSがダークモードの場合
+------------------------- */
+
 @media (prefers-color-scheme: dark) {
+
   body {
     background: #111;
     color: #ddd;
@@ -95,6 +117,39 @@ footer {
   button {
     background: #222;
     color: #ddd;
+
     border: 1px solid #555;
   }
+}
+
+
+/* -------------------------
+   音声再生中
+------------------------- */
+
+body.playing {
+  background: #000;
+  color: #111;
+}
+
+
+/* 説明とクレジットを消す */
+body.playing .description,
+body.playing footer {
+  display: none;
+}
+
+
+/* 読み上げ中の単語もかなり暗くする */
+body.playing #word-display {
+  color: #0a0a0a;
+}
+
+
+/* 停止ボタンもかなり暗くする */
+body.playing #start-button {
+  background: #050505;
+  color: #222;
+
+  border: 1px solid #151515;
 }
