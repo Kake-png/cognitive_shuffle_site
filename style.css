@@ -50,6 +50,80 @@ body {
   text-decoration: none;
 }
 
+/* -------------------------
+   ドロップダウン
+------------------------- */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+
+  background: none;
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.dropdown-menu {
+  display: none;
+
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 180px;
+
+  padding: 8px 0;
+
+  background: white;
+  border: 1px solid #ddd;
+
+  text-align: left;
+
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  display: block;
+
+  padding: 10px 16px;
+
+  color: #111;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #eee;
+}
+
+
+/* PCではマウスを乗せても開く */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+/* タップ・クリック時 */
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
 
 /* -------------------------
    メイン部分
@@ -226,6 +300,19 @@ footer {
     color: #ddd;
 
     border-color: #555;
+  }
+
+  .dropdown-menu {
+    background: #111;
+    border-color: #333;
+  }
+
+  .dropdown-menu a {
+    color: #ddd;
+  }
+
+  .dropdown-menu a:hover {
+    background: #222;
   }
 }
 
