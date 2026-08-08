@@ -4,7 +4,6 @@
 
 body {
   margin: 0;
-  padding: 120px 24px 40px;
   min-height: 100vh;
 
   background: white;
@@ -14,9 +13,41 @@ body {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   text-align: center;
+}
+
+
+/* -------------------------
+   ヘッダー
+------------------------- */
+
+.site-header {
+  width: 100%;
+  padding: 20px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.site-title {
+  color: inherit;
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  color: inherit;
+  text-decoration: none;
 }
 
 
@@ -27,7 +58,9 @@ body {
 main {
   width: 100%;
   max-width: 600px;
+
   margin: 0 auto;
+  padding: 200px 24px 0;
 }
 
 
@@ -41,7 +74,8 @@ main {
 
 h1 {
   width: 100%;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  margin-bottom: 100;
 
   text-align: center;
 }
@@ -53,6 +87,16 @@ h1 {
   margin-top: 24px;
   padding: 16px;
 
+  background: white;
+  color: #111;
+
+  border: 1px solid #777;
+  border-radius: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  font-family: inherit;
   font-size: 1rem;
 
   cursor: pointer;
@@ -64,7 +108,7 @@ h1 {
 ------------------------- */
 
 .description {
-  margin-top: 100px;
+  margin-top: 200px;
 
   text-align: center;
 }
@@ -86,6 +130,21 @@ h1 {
 
 
 /* -------------------------
+   広告
+------------------------- */
+
+.ad-area {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 64px auto 0;
+  padding: 0 24px;
+
+  text-align: center;
+}
+
+
+/* -------------------------
    フッター
 ------------------------- */
 
@@ -93,13 +152,57 @@ footer {
   width: 100%;
   max-width: 600px;
 
-  margin-top: 64px;
+  margin: 64px auto 0;
+  padding: 0 24px 40px;
 
   text-align: center;
 
   font-size: 0.8rem;
 
   opacity: 0.6;
+}
+
+.footer-nav {
+  margin-bottom: 16px;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+}
+
+.footer-nav a {
+  color: inherit;
+}
+
+
+/* -------------------------
+   スマホ
+------------------------- */
+
+@media (max-width: 600px) {
+
+  .site-header {
+    display: block;
+  }
+
+  .site-title {
+    display: block;
+
+    margin-bottom: 16px;
+  }
+
+  .site-nav {
+    justify-content: center;
+
+    gap: 16px;
+
+    font-size: 0.85rem;
+  }
+
+  main {
+    padding-top: 80px;
+  }
 }
 
 
@@ -114,11 +217,15 @@ footer {
     color: #ddd;
   }
 
-  button {
+  .site-header {
+    border-bottom-color: #333;
+  }
+
+  #start-button {
     background: #222;
     color: #ddd;
 
-    border: 1px solid #555;
+    border-color: #555;
   }
 }
 
@@ -133,23 +240,33 @@ body.playing {
 }
 
 
-/* 説明とクレジットを消す */
+/* 再生中はプレイヤー以外を消す */
+body.playing .site-header,
 body.playing .description,
+body.playing .ad-area,
 body.playing footer {
   display: none;
 }
 
 
-/* 読み上げ中の単語もかなり暗くする */
+/* ヘッダーが消えるので位置を調整 */
+body.playing main {
+  padding-top: 120px;
+}
+
+
+/* 読み上げ中の単語をかなり暗くする */
 body.playing #word-display {
   color: #0a0a0a;
 }
 
 
-/* 停止ボタンもかなり暗くする */
+/* 停止ボタンも暗くする */
 body.playing #start-button {
   background: #050505;
   color: #222;
 
   border: 1px solid #151515;
+
+  border-radius: 0;
 }
