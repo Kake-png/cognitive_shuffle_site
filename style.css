@@ -81,7 +81,7 @@ body {
 
   position: absolute;
   top: calc(100%);
-  left: 50%;
+  left: 20%;
 
   transform: translateX(-50%);
 
@@ -356,4 +356,82 @@ body.playing #start-button {
   border: 1px solid #151515;
 
   border-radius: 0;
+}
+
+
+/* -------------------------
+   記事ページ
+------------------------- */
+
+.article-page {
+  padding-top: 72px;
+  text-align: left;
+}
+
+.article {
+  width: 100%;
+}
+
+
+/* 記事タイトル */
+.article-header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.article-header h1 {
+  margin: 0 0 24px;
+}
+
+.article-lead {
+  margin: 0;
+  line-height: 2;
+}
+
+
+/* 各項目 */
+.article section {
+  margin-top: 56px;
+}
+
+.article section h2 {
+  margin: 0 0 24px;
+  font-size: 1.2rem;
+}
+
+.article section p {
+  margin: 16px 0;
+  line-height: 2;
+}
+
+
+/* 手順・箇条書き */
+.article ol,
+.article ul {
+  margin: 16px 0;
+  padding-left: 24px;
+  line-height: 2;
+}
+
+.article li {
+  margin: 8px 0;
+}
+
+
+/* 参考資料 */
+.references {
+  padding-top: 32px;
+  border-top: 1px solid #ddd;
+}
+
+.references a {
+  color: inherit;
+}
+
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+  .references {
+    border-top-color: #333;
+  }
 }
