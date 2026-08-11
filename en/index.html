@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      if (
+        location.hostname !== "localhost" &&
+        location.hostname !== "127.0.0.1"
+      ) {
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-1FH8FRZWZV";
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-1FH8FRZWZV");
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple sleep support site where you can try the cognitive shuffle sleep method with audio.">
+    <link rel="stylesheet" href="../style.css">
+    <title>Cognitive Shuffle Sleep Method</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="site-title" href="index.html">
+        Cognitive Shuffle Sleep Method
+      </a>
+
+      <nav class="site-nav">
+        <a href="index.html">Cognitive Shuffle</a>
+
+        <div class="dropdown">
+          <button class="dropdown-button" type="button">
+            Sleep Tips
+          </button>
+
+          <div class="dropdown-menu">
+            <a href="PMR.html">Progressive Muscle Relaxation</a>
+            <a href="drink.html">Bedtime Drinks</a>
+            <a href="bgm.html">Alpha Waves and Sleep Music</a>
+            <a href="todo.html">Write a To-Do List to Fall Asleep</a>
+            <a href="head.html">Head Massage Beats Eye Strain</a>
+          </div>
+        </div>
+
+        <a href="../index.html">日本語</a>
+      </nav>
+    </header>
+    <main>
+        <section class="player">
+        <h1 id="word-display">Good night</h1>
+        <button id="start-button">Start</button>
+        </section>
+
+        <section class="description">
+        <h3>~What Is the Cognitive Shuffle Sleep Method?~</h3>
+
+        <p>A simple technique for quieting</p>
+        <p>a mind that is still working.</p>
+
+        <p>By picturing unrelated words</p>
+        <p>one after another,</p>
+
+        <p>you pull your brain out of gear</p>
+        <p>and let sleep come sooner.</p>
+
+        <h3>~How to Do It~</h3>
+
+        <p>Listen for each word,</p>
+        <p>and picture it loosely for a few seconds.</p>
+        </section>
+    </main>
+
+    <aside class="ad-area">
+      <!-- AdSense広告を後からここに設置 -->
+    </aside>
+
+    <footer>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About This Site</a>
+      </nav>
+
+      <p>English narration generated with Kokoro-82M.</p>
+    </footer>
+
+    <script src="words.js"></script>
+    <script src="../menu.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -8,6 +8,14 @@ const wordDisplay =
 let timerId = null;
 let isPlaying = false;
 
+const isEnglish = document.documentElement.lang === "en";
+
+const uiText = {
+  goodNight: isEnglish ? "Good night" : "おやすみなさい",
+  start: isEnglish ? "Start" : "はじめる",
+  stop: isEnglish ? "Stop" : "しずかにする"
+};
+
 
 // -------------------------
 // 音声
@@ -229,8 +237,7 @@ function start() {
   );
 
 
-  startButton.textContent =
-    "しずかにする";
+  startButton.textContent = uiText.stop;
 
 
   // 画面が自動で消えないようにする
@@ -264,12 +271,10 @@ function stop() {
   );
 
 
-  wordDisplay.textContent =
-    "おやすみなさい";
+  wordDisplay.textContent = uiText.goodNight;
 
 
-  startButton.textContent =
-    "はじめる";
+  startButton.textContent = uiText.start;
 
 
   // Wake Lock解除
