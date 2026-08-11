@@ -1,6 +1,12 @@
-**/.git
+.git/
+.git/**
+.wrangler/
+.wrangler/**
+.DS_Store
 **/.DS_Store
-**/.venv-kokoro
-**/__pycache__
+.venv-kokoro/
+.venv-kokoro/**
+__pycache__/
+**/__pycache__/
 *.pyc
 .env
