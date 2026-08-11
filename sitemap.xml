@@ -25,4 +25,29 @@
     <loc>https://cognitive-shuffle-site.kake-web.workers.dev/privacy</loc>
   </url>
 
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/PMR</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/drink</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/bgm</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/todo</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/head</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/about</loc>
+  </url>
+  <url>
+    <loc>https://cognitive-shuffle-site.kake-web.workers.dev/en/privacy</loc>
+  </url>
+
 </urlset>
