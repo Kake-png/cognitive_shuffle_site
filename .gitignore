@@ -1,0 +1,5 @@
+.DS_Store
+.venv-kokoro/
+__pycache__/
+*.pyc
+.env
